@@ -1,0 +1,29 @@
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "extensions.verifySignature": false,
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/usr/bin/zsh",
+                        "args": [
+                            "-l"
+                        ]
+                    }
+                }
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    },
+    "remoteUser": "vscode",
+    "workspaceMount": "source=${localWorkspaceFolder}/,target=/home/vscode/workspaces,type=bind,consistency=cached",
+    "workspaceFolder": "/home/vscode/workspaces",
+}
